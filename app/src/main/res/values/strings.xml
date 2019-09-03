@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Evento</string>
+
+
+    <!--chaves da api-->
+    <string name="chave_api_eventox">XXXXXXXXXXXXXXX</string>
+</resources>
