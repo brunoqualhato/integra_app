@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">Evento</string>
+    <string name="app_name">Integra IF Goiano</string>
 
 
     <!--chaves da api-->
-    <string name="chave_api_eventox">XXXXXXXXXXXXXXX</string>
+    <string name="chave_api_eventox">XXXXXXXXXXXX</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <bool name="em_dev">true</bool>
 </resources>
