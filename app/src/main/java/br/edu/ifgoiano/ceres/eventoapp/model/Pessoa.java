@@ -2,17 +2,10 @@ package br.edu.ifgoiano.ceres.eventoapp.model;
 
 public class Pessoa {
 
+    private long id_attendees;
+    private long id_event;
 
-    private int id_attendees;
-    private int id_event;
-    private String name;
-    private String bagde_name;
-    private String email;
-    private String gender;
-    private String photo;
-    private boolean confirmed;
-
-    public Pessoa(int id_attendees, int id_event, String name, String bagde_name, String email, String gender, String photo, boolean confirmed) {
+    public Pessoa(long id_attendees, long id_event, String name, String bagde_name, String email, String gender, String photo, boolean confirmed) {
         this.id_attendees = id_attendees;
         this.id_event = id_event;
         this.name = name;
@@ -23,10 +16,31 @@ public class Pessoa {
         this.confirmed = confirmed;
     }
 
+    private String name;
+    private String bagde_name;
+    private String email;
+    private String gender;
+    private String photo;
+    private boolean confirmed;
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id_attendees=" + id_attendees +
+                ", id_event=" + id_event +
+                ", name='" + name + '\'' +
+                ", bagde_name='" + bagde_name + '\'' +
+                ", email='" + email + '\'' +
+                ", gender='" + gender + '\'' +
+                ", photo='" + photo + '\'' +
+                ", confirmed=" + confirmed +
+                '}';
+    }
+
     public Pessoa() {
     }
 
-    public int getId_attendees() {
+    public long getId_attendees() {
         return id_attendees;
     }
 
@@ -34,7 +48,7 @@ public class Pessoa {
         this.id_attendees = id_attendees;
     }
 
-    public int getId_event() {
+    public long getId_event() {
         return id_event;
     }
 
@@ -88,20 +102,6 @@ public class Pessoa {
 
     public void setConfirmed(boolean confirmed) {
         this.confirmed = confirmed;
-    }
-
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "id_attendees=" + id_attendees +
-                ", id_event=" + id_event +
-                ", name='" + name + '\'' +
-                ", bagde_name='" + bagde_name + '\'' +
-                ", email='" + email + '\'' +
-                ", gender=" + gender +
-                ", photo='" + photo + '\'' +
-                ", confirmed=" + confirmed +
-                '}';
     }
 
 }

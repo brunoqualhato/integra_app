@@ -11,6 +11,14 @@ public class Tickets {
         this.prices = prices;
     }
 
+    @Override
+    public String toString() {
+        return "Tickets{" +
+                "title='" + title + '\'' +
+                ", prices=" + prices +
+                '}';
+    }
+
     public String getTitle() {
         return title;
     }

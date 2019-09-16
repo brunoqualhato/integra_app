@@ -22,7 +22,7 @@ public class AberturaActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                startActivity(new Intent(AberturaActivity.this, MainActivity.class));
+                startActivity(new Intent(AberturaActivity.this, CalendarioEventosActivity.class));
 
 
                 finish();

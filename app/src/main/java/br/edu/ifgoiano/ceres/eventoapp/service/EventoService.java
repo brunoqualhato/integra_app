@@ -1,6 +1,7 @@
 package br.edu.ifgoiano.ceres.eventoapp.service;
 
 import android.content.Context;
+import android.util.Log;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -38,7 +39,7 @@ public class EventoService {
                 new Callback() {
                     @Override
                     public void onFailure(@NotNull Call call, @NotNull IOException e) {
-
+                        Log.e("FAIL", e.getMessage());
                     }
 
                     @Override
@@ -82,13 +83,15 @@ public class EventoService {
                                         dadosEventoJSONObject.getString("state"),
                                         dadosEventoJSONObject.getString("city"),
                                         dadosEventoJSONObject.getString("venue"),
-                                        0.0, 0.0,
+                                        dadosEventoJSONObject.getDouble("latitude"),
+                                        dadosEventoJSONObject.getDouble("longitude"),
                                         dadosEventoJSONObject.getString("banner"),
                                         listaDeTickets)
+
                                 );
 
                             }
-                            setListaDeEventos(listaDeEventos);
+                            //setListaDeEventos(listaDeEventos);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

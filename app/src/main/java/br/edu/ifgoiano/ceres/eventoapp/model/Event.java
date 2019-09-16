@@ -4,6 +4,31 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Event implements Serializable {
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", url='" + url + '\'' +
+                ", start_date='" + start_date + '\'' +
+                ", end_date='" + end_date + '\'' +
+                ", start_date_registration='" + start_date_registration + '\'' +
+                ", end_date_registration='" + end_date_registration + '\'' +
+                ", summary='" + summary + '\'' +
+                ", description='" + description + '\'' +
+                ", url_image='" + url_image + '\'' +
+                ", credit_hour=" + credit_hour +
+                ", country='" + country + '\'' +
+                ", state='" + state + '\'' +
+                ", city='" + city + '\'' +
+                ", venue='" + venue + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", banner='" + banner + '\'' +
+                ", tickets=" + tickets +
+                '}';
+    }
+
     private int id;
     private String title;
     private String url;

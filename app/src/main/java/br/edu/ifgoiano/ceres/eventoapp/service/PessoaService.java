@@ -29,7 +29,7 @@ public class PessoaService {
 
     private void inicializaArray() {
         new OkhttpManager().getAsyncCall(
-                "https://www.even3.com.br/api/v1/event",
+                "https://www.even3.com.br/api/v1/attendees/",
                 new String[]{"Authorization-Token",
                         this.context.getString(R.string.chave_api_eventox)}, new Callback() {
                     @Override
@@ -39,25 +39,28 @@ public class PessoaService {
 
                     @Override
                     public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+
                         try {
                             if (response.isSuccessful()) {
-                                JSONObject pessoaObject = new JSONObject(Objects.requireNonNull(response.body()).string());
-                                JSONArray pessoaArray = new JSONArray(pessoaObject.getString("data"));
-
-                                for (int i = 0; i < pessoaArray.length(); i++) {
+                                JSONObject pessoasObject = new JSONObject(Objects.requireNonNull(response.body()).string());
+                                JSONArray pessoasArray = new JSONArray(pessoasObject.getString("data"));
+                                // System.out.println(pessoasArray.length());
+                                for (int i = 0; i < pessoasArray.length(); i++) {
+                                    JSONObject pessoaArray = pessoasArray.getJSONObject(i);
                                     pessoaArrayList.add(
                                             new Pessoa(
-                                                    pessoaObject.getInt("id_attendees"),
-                                                    pessoaObject.getInt("id_event"),
-                                                    pessoaObject.getString("name"),
-                                                    pessoaObject.getString("bagde_name"),
-                                                    pessoaObject.getString("email"),
-                                                    pessoaObject.getString("gender"),
-                                                    pessoaObject.getString("photo"),
-                                                    pessoaObject.getBoolean("confirmed")
+                                                    pessoaArray.getLong("id_attendees"),
+                                                    pessoaArray.getLong("id_event"),
+                                                    pessoaArray.getString("name"),
+                                                    pessoaArray.getString("bagde_name"),
+                                                    pessoaArray.getString("email"),
+                                                    pessoaArray.getString("gender"),
+                                                    pessoaArray.getString("photo"),
+                                                    pessoaArray.getBoolean("confirmed")
                                             )
                                     );
                                 }
+
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

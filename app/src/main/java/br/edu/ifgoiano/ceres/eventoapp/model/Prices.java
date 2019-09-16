@@ -13,6 +13,16 @@ public class Prices {
         this.due_date = due_date;
     }
 
+    @Override
+    public String toString() {
+        return "Prices{" +
+                "id_ticket=" + id_ticket +
+                ", id_ticket_price=" + id_ticket_price +
+                ", price=" + price +
+                ", due_date='" + due_date + '\'' +
+                '}';
+    }
+
     public int getId_ticket() {
         return id_ticket;
     }
